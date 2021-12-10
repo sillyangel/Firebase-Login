@@ -12,27 +12,20 @@
       <link rel="apple-touch-icon" sizes="256x256" href="/icon.png" />
       <meta name="HandheldFriendly" content="true" />
         <meta
-      name="description"
+      name="Website Name"
       content="Welcome to the login Screen.">
       <meta name="mobile-web-app-capable" content="yes" />
 	<link rel="shortcut icon" sizes="256x256" href="/icon.png" />
       <title>banana-nana Login</title>
       <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-      <meta name="google-signin-scope" content="profile email">
-      <script src="github.js"></script>
-      <meta name="google-signin-client_id" content="488580251116-8vqjco02bh5u1k8ovbuoqp9aeiu83mpo.apps.googleusercontent.com">
+      <script src="assets/js/github.js"></script>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <link rel="stylesheet" href="style.css" />
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
+      <link rel="stylesheet" href="asstes/css/style.css" />
     </head>
     <body>
     
       <div id="login_div" class="main-div">
-        <h3>Banana-nana Login Page</h3>
+        <h3>Website Name Login Page</h3>
         <input type="email" placeholder="Email..." id="email_field" />
         <input type="password" placeholder="Password..." id="password_field" />
     
@@ -69,7 +62,7 @@
         };
         firebase.initializeApp(config);
       </script>
-      <script src="index.js"></script>
+      <script src="assets/js/index.js"></script>
     
       <script>
 
@@ -107,19 +100,7 @@ navigator.serviceWorker
 });
 }
 
-if (navigator.serviceWorker) {
-  window.addEventListener('load', () => {
-navigator.serviceWorker
-  // The register function takes as argument
-  // the file path to the worker's file
-  .register('/Firebase/Firebase.js')
-  // Gives us registration object
-  .then(reg => console.log('Script is loaded'))
-  .catch(swErr => console.log(
-      `Error on Script Loading: ${swErr}}`));
-  });
-}
-  
+
   </script>
   
   
