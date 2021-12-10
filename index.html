@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+      <link rel="manifest" href="/appmanifest.json" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+      <meta charset="UTF-8" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+      <link rel="apple-touch-icon" sizes="256x256" href="/icon.png" />
+      <meta name="HandheldFriendly" content="true" />
+        <meta
+      name="description"
+      content="Welcome to the login Screen.">
+      <meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" sizes="256x256" href="/icon.png" />
+      <title>banana-nana Login</title>
+      <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+      <meta name="google-signin-scope" content="profile email">
+      <script src="github.js"></script>
+      <meta name="google-signin-client_id" content="488580251116-8vqjco02bh5u1k8ovbuoqp9aeiu83mpo.apps.googleusercontent.com">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
+    </head>
+    <body>
+    
+      <div id="login_div" class="main-div">
+        <h3>Banana-nana Login Page</h3>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+    
+        <button onclick="login()">Login to Account</button>
+        <br>
+        <button onclick="Create()">Create A Account</button>
+        
+        <h3> Or </h3>
+   <p></p>
+        
+        <button onclick="Github()">Github</button> 
+         
+      </div>
+    
+      <div id="user_div" class="loggedin-div">
+          <h1> Banana-nana Dashboard </h1> <p id="user_para">Welcome Back</p>
+          
+          
+        <button onclick="logout()">Logout</button>
+      </div>
+    
+    
+    
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "",
+            authDomain: "",
+            databaseURL: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: ""
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="index.js"></script>
+    
+      <script>
+
+var provider = new firebase.auth.GithubAuthProvider();
+
+
+
+function Github() {
+  firebase.auth().signInWithRedirect(provider);
+}
+
+
+
+
+      
+
+      </script>
+
+
+<script> 
+	  
+	  
+  // Ensure that the browser supports the service worker API
+if (navigator.serviceWorker) {
+// Start registration process on every page load
+window.addEventListener('load', () => {
+navigator.serviceWorker
+  // The register function takes as argument
+  // the file path to the worker's file
+  .register('/sw.js')
+  // Gives us registration object
+  .then(reg => console.log('Service Worker Registered'))
+  .catch(swErr => console.log(
+      `Service Worker Installation Error: ${swErr}}`));
+});
+}
+
+if (navigator.serviceWorker) {
+  window.addEventListener('load', () => {
+navigator.serviceWorker
+  // The register function takes as argument
+  // the file path to the worker's file
+  .register('/Firebase/Firebase.js')
+  // Gives us registration object
+  .then(reg => console.log('Script is loaded'))
+  .catch(swErr => console.log(
+      `Error on Script Loading: ${swErr}}`));
+  });
+}
+  
+  </script>
+  
+  
+
+
+    </body>
+    </html>
+    <!--      <button onclick="Focebook()">Facebook</button>     -->
