@@ -1,7 +1,7 @@
 {
 	"name": "App name",
 	"short_name": "Short App name",
-	"start_url": "Login/index.html",
+	"start_url": "/index.html",
 	"display": "fullscreen",
 	"orientation": "any",
 	"icons": [{
